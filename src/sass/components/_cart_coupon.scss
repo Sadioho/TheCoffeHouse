@@ -1,0 +1,66 @@
+.coupon {
+  width: 45rem;
+  position: fixed;
+  background-color: $color-white;
+  font-size: 1.4rem;
+  box-shadow: 0px 2px 5px 0px $color-grey-dark;
+
+  &__header {
+    padding: 2rem;
+  }
+  &__detail {
+    // line-height: 3rem;
+    border-top: 2px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
+    &-sum {
+      padding-top: 1rem ;
+    }
+    &-currency {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding: 0rem 2rem;
+      align-items: center;
+    }
+    &-sale {
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+
+.product__detail{
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid $color-grey-light;
+  &-amount{
+    flex-flow: 1;
+    background-color:$color-primary;
+    padding: 0rem 1rem;
+    margin-right: 1rem; 
+    color: $color-white;
+       
+  }
+
+  &-text{
+    flex-grow: 2;
+  }
+
+  &-product_name{
+    font-weight: bold;
+  }
+  &-size,&-topping,&-note{
+    font-size: 1.2rem;
+  }
+
+  &-topping{
+    
+  }
+  &-note{
+    
+  }
+}

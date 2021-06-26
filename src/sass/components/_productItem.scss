@@ -1,0 +1,37 @@
+/* product table */
+.product {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  &__item {
+    display: flex;
+
+    background-color: $color-white;
+    padding: 0.7rem;
+    &-img {
+      img {
+        align-self: flex-start;
+        width: 8rem;
+        margin-right: 1rem;
+      }
+    }
+    &-content {
+      width: 100%;
+      &-title {
+        font-size: 1.4rem;
+        font-weight: 600; 
+      }
+      &-text {
+        font-size: 1.25rem;
+        color: $color-grey-dark;
+      }
+    }
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      &-text {
+        font-size: 1.4rem;
+        font-weight: normal;
+      }
+    }
+  }
+}

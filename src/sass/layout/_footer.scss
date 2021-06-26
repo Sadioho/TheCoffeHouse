@@ -1,0 +1,66 @@
+.footer {
+  // position: absolute;
+  z-index: 2000;
+  background-color: $color-black;
+  padding: 10rem 0 2rem 0;
+  color: $color-white;
+  margin: auto;
+  font-size: 1.25rem;
+  // bottom: 0;
+  width: 100%;
+  .row {
+    justify-content: space-between;
+  }
+  &__widget {
+    &-heading {
+      font-size: 1.6rem;
+      color: $color-primary;
+      text-transform: uppercase;
+    }
+  }
+  &__widget-1 {
+    img {
+      width: 15rem;
+    }
+  }
+  &__widget-2 {
+    &-about {
+      display: flex;
+      align-items: stretch;
+    }
+    &-company {
+      font-size: 1.3rem;
+      color: $color-white;
+      text-transform: uppercase;
+    }
+    img {
+      margin-top: 1rem;
+      width: 20rem;
+    }
+  }
+  &__widget-3 {
+    img {
+      width: 15rem;
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+  &__widget-4 {
+    &-address {
+      a {
+        display: block;
+        color: $color-white;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 1rem;
+    a {
+      display: block;
+      font-size: 1.3rem;
+      color: $color-grey-dark;
+    }
+  }
+}

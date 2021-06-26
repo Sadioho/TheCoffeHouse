@@ -1,0 +1,55 @@
+.container-full{
+  position: relative;
+}
+
+
+
+
+
+
+.body {
+    margin-top: 12rem;
+    min-height: 100vh;
+    height: max-content;
+    
+  .row {
+    justify-content: space-between;
+  }
+}
+
+
+// ở đây
+.body__category-name {
+  margin: 1rem;
+  font-size: 1.4rem;
+}
+
+
+.product-list-item ~ .none-data{
+  display: none;
+}
+
+.none-data{
+  color: orange;
+}
+//product container
+
+// .active-2{
+//   background-color: blue;
+// }
+.product-container{
+  margin-bottom: 17rem;
+}
+
+.search-input{
+  position: relative;
+  i{
+    position: absolute;
+    left:.5rem;
+    top: 50%;
+    font-size: 2rem;
+    transform: translate(0,-50%);
+  }
+}
+
+

@@ -1,0 +1,27 @@
+.left-container {
+  width: 30rem;
+  font-size: 1.2rem;
+  position: fixed;
+  box-shadow: 0px 2px 5px 0px $color-grey-dark;
+}
+
+.category-list {
+  background-color: $color-white;
+  padding: 1rem 2rem;
+ 
+}
+.category-item {
+  padding: 1rem 0;
+  display: block;
+  cursor: pointer;
+  &:hover {
+    color: $color-grey-dark;
+  }
+}
+
+
+
+.active-1{
+  color: $color-primary;
+  border-bottom: 1px solid ;
+ }

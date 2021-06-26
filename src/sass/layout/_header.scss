@@ -1,0 +1,136 @@
+.header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  font-size: 1.25rem;
+  background-color: $color-white;
+  padding: 1.5rem;
+  width: 100%;
+  .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    img {
+      width: 20rem;
+    }
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &-search {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__input {
+    margin-left: 3rem;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__address {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 4rem;
+    background-color: white;
+    box-shadow: 0px 1px 10px -4px #9b9b9b;
+    // height: 0;
+
+    &-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 1px solid rgb(200, 200, 200);
+      padding: 1rem;
+      cursor: pointer;
+      &:hover {
+        background: rgb(223, 223, 223);
+      }
+    }
+    &-icon {
+      padding: 0.5rem;
+    }
+    &-text {
+      flex-grow: 2;
+      padding: 0.5rem;
+      & p:first-child {
+        text-transform: uppercase;
+      }
+    }
+  }
+  .btn-login {
+    display: flex;
+    align-items: center;
+
+    .total_cart {
+      @extend .btn-login;
+      margin: 0 5rem;
+      cursor: pointer;
+    }
+    .total_amount {
+      background-color: $color-primary;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      border-radius: 50%;
+      color: $color-white;
+    }
+  }
+}
+
+.input-focus:focus {
+  border: 1px solid orangered;
+}
+
+//Delivery
+
+.delivery {
+  position: absolute;
+  background-color: $color-white;
+  top: 4rem;
+  width: 29rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 1px 10px -4px #9b9b9b;
+
+  &__button {
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgb(245, 245, 245);
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-light;
+      text-transform: uppercase;
+    }
+  }
+  &__icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  &__dropdown {
+    padding: 2rem 1rem;
+    border-top: 1px solid $color-primary;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      select {
+        padding: 1rem 2rem;
+        outline: none;
+      }
+    }
+  }
+}

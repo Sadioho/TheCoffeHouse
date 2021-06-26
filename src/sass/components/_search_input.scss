@@ -1,0 +1,29 @@
+.search {
+  position: relative;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+  }
+  &__input {
+  border: 1px solid rgb(185, 185, 185);
+    padding: 0.8rem 3rem;
+    outline: none;
+  }
+}
+
+.size-lager {
+  width: 50rem;
+ 
+}
+.size-medium {
+  width: 40rem;
+}
+.size-small {
+  width: 28rem;
+}
+.size-100{
+  width: 100%;
+}
+

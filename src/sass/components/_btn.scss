@@ -1,0 +1,33 @@
+.btn{
+  position: relative;
+}
+.btn:link,
+.btn:visited {
+  padding: 1rem 3rem;
+  
+  text-transform: uppercase;
+
+  border: 1px solid $color-grey-dark;
+
+  transition: border .5s;
+ 
+}
+.btn:active,
+.btn:hover {
+  border: 1px solid $color-grey-light;
+}
+
+.btn-orange{
+    background-color: $color-primary;
+    font-weight: bold;
+    color: $color-white;
+   
+}
+
+.btn-size-lager{
+ display: block;
+ text-align: center;
+
+}
+
+

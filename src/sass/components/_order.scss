@@ -1,0 +1,94 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.52);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1100;
+  //  display: none;
+}
+.container_order {
+  // display: none;
+  width: 62.8rem;
+  position: fixed;
+  z-index: 1100;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+  }
+  .header_order {
+    display: flex;
+    padding: 1rem 0;
+    position: relative;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    &_text {
+      h4 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .body_order {
+    border-bottom: 1px solid rgb(172, 172, 172);
+
+    &_text {
+      padding: 1rem 0;
+    }
+  }
+
+  .check_size {
+    width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    input {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      // background-color: $color-primary !important;
+    }
+  }
+  .search-input {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgb(172, 172, 172);
+  }
+  .footer_order_button {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-amount {
+      display: flex;
+      align-items: center;
+      h5 {
+        margin: 0 1rem;
+      }
+    }
+  }
+  .icon-close {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+  .radio_check {
+    display: flex;
+    align-items: center;
+    label {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+}
+
+//custom radion , checkbox

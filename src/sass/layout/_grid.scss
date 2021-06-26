@@ -1,0 +1,42 @@
+.container {
+  width: 140rem;
+  margin: auto;
+}
+.container-fluid {
+  width: 190rem;
+  padding: 0 4rem;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+.col-1 {
+  flex-grow: 1;
+  flex-basis: 20rem;
+}
+.col-2 {
+  flex-grow: 1;
+
+  flex-basis: 20rem;
+}
+.col-3 {
+  flex-grow: 1;
+
+  flex-basis: 20rem;
+}
+.col-4 {
+  flex-grow: 1;
+
+  flex-basis: 20rem;
+}
+
+.col-left {
+ width: 30rem;
+}
+.col-product {
+  width: 60rem;
+}
+.col-right {
+  width: 45rem;
+}
