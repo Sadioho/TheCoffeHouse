@@ -126,18 +126,36 @@ class Header extends React.Component {
     this.setState({
       dataDate: arr,
     });
-  };
+  }; 
 
   pushDataTime = () => {
     let timeStart = new Date();
+    if (timeStart.getMinutes() < 15) {
+      timeStart.setMinutes(
+        timeStart.getMinutes() - timeStart.getMinutes() + 45
+      );
+    } else if (timeStart.getMinutes() < 30) {
+      timeStart.setMinutes(
+        timeStart.getMinutes() - timeStart.getMinutes() + 60
+      );
+    } else {
+      timeStart.setMinutes(
+        timeStart.getMinutes() - timeStart.getMinutes() + 75
+      );
+    }
+
     let timeEnd = new Date();
-    let arrTime = [];
-    timeStart.setMinutes(timeStart.getMinutes() + 60 - timeStart.getMinutes());
     timeEnd.setHours(20);
     timeEnd.setMinutes(30);
+
+    let timeDemo = new Date();
+    timeDemo.setMinutes(timeDemo.getMinutes() - timeDemo.getMinutes()+150);
+
+    let arrTime = [];
+
     for (
       timeStart;
-      timeStart <= timeEnd;
+      timeStart < timeDemo;
       timeStart.setMinutes(timeStart.getMinutes() + 15)
     ) {
       arrTime.push(
@@ -147,6 +165,21 @@ class Header extends React.Component {
         })
       );
     }
+    for (
+      timeStart.setMinutes(30);
+      timeStart <= timeEnd;
+      timeStart.setMinutes(timeStart.getMinutes() + 30)
+    ) {
+      arrTime.push(
+        timeStart.toLocaleTimeString("en-GB", {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      );
+
+
+    }
+
     this.setState({
       dataTime: arrTime,
     });

@@ -211,7 +211,8 @@ li {
     .product__item-img img {
       align-self: flex-start;
       width: 8rem;
-      margin-right: 1rem; }
+      margin-right: 1rem;
+      display: block; }
     .product__item-content {
       width: 100%; }
       .product__item-content-title {
