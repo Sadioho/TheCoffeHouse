@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Currency extends Component {
   render() {
+    const { price, className } = this.props;
     return (
-      <p className={`currency ${this.props.className}`}>
-        {this.props.price} <span className="text-underline  ">đ</span>
+      <p className={`currency ${className}`}>
+        {price} <span className="text-underline  ">đ</span>
       </p>
     );
   }

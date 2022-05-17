@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import LeftContainer from "../features/LeftContainer";
-import ProductContainer from "../features/ProductContainer";
-import CartContainer from "../features/CartContainer";
-import PlacehoderLoading from "../placehoders/PlacehoderLoading";
-import NoneData from "../placehoders/NoneData";
-import Order from "../features/Order";
-
+import React, { Component } from 'react';
+import LeftContainer from '../features/LeftContainer';
+import ProductContainer from '../features/ProductContainer';
+import CartContainer from '../features/CartContainer';
+import PlacehoderLoading from '../placehoders/PlacehoderLoading';
+import NoneData from '../placehoders/NoneData';
+import Order from '../features/Order';
+import _size from 'lodash/size';
 class Body extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,6 @@ class Body extends Component {
       loading: true,
       listCategory: [],
       active: null,
-
       dataItem: null,
       layoutOrder: false,
       listOrder: [],
@@ -54,11 +53,11 @@ class Body extends Component {
 
   // fetch api
   componentDidMount() {
-    fetch("https://api.thecoffeehouse.com/api/v2/category/web")
+    fetch('https://api.thecoffeehouse.com/api/v2/category/web')
       .then((res) => res.json())
       .then((data1) => {
         if (data1.status_code !== 500) {
-          fetch("https://api.thecoffeehouse.com/api/v2/menu")
+          fetch('https://api.thecoffeehouse.com/api/v2/menu')
             .then((res) => res.json())
             .then((data2) => {
               if (data2.status_code !== 500) {
@@ -74,13 +73,13 @@ class Body extends Component {
       });
 
     if (
-      JSON.parse(localStorage.getItem("listOrder")) &&
-      JSON.parse(localStorage.getItem("listOrder")).length > 0
+      JSON.parse(localStorage.getItem('listOrder')) &&
+      JSON.parse(localStorage.getItem('listOrder')).length > 0
     ) {
       this.setState({
-        listOrder: JSON.parse(localStorage.getItem("listOrder")),
+        listOrder: JSON.parse(localStorage.getItem('listOrder')),
       });
-      this.getTotalAmount(JSON.parse(localStorage.getItem("listOrder")));
+      this.getTotalAmount(JSON.parse(localStorage.getItem('listOrder')));
     }
   }
   // get dataitem
@@ -92,7 +91,7 @@ class Body extends Component {
       amount: 1,
       sizeActive: null,
       toppingActive: [],
-      txtNote:null
+      txtNote: null,
     });
   };
 
@@ -165,7 +164,7 @@ class Body extends Component {
       });
       this.getTotalAmount([...arrEdit, data].filter((item) => item.amount > 0));
       localStorage.setItem(
-        "listOrder",
+        'listOrder',
         JSON.stringify([...arrEdit, data].filter((item) => item.amount > 0))
       );
     } else {
@@ -173,7 +172,7 @@ class Body extends Component {
         listOrder: [...arrEdit],
       });
       this.getTotalAmount([...arrEdit]);
-      localStorage.setItem("listOrder", JSON.stringify([...arrEdit]));
+      localStorage.setItem('listOrder', JSON.stringify([...arrEdit]));
     }
 
     this.setState({
@@ -205,12 +204,11 @@ class Body extends Component {
       txtNote: item.txtNote,
       indexEdit: index,
       layoutOrder: true,
-
     });
   };
 
   addToCartV2 = () => {
-    let txtNote = document.getElementById("form-order").value;
+    let txtNote = document.getElementById('form-order').value;
     this.setState({
       txtNote: txtNote,
     });
@@ -226,58 +224,74 @@ class Body extends Component {
   };
 
   render() {
+    const {} = this.props;
+    const {
+      loading,
+      listCategory,
+      active,
+      listOrder,
+      totalAmount,
+      totalPrice,
+      layoutOrder,
+      dataItem,
+      txtNote,
+      sizeActive,
+      price_new,
+      toppingActive,
+      amount,
+    } = this.state;
     return (
       <div className="body" id="body">
-        {this.state.loading ? (
+        {loading ? (
           <PlacehoderLoading></PlacehoderLoading>
-        ) : this.state.listCategory.length <= 0 ? (
+        ) : _size(listCategory) <= 0 ? (
           <NoneData></NoneData>
         ) : (
           <div className="container">
             <div className="row">
               <div className="col-left">
                 <LeftContainer
-                  dataLeft={this.state.listCategory}
+                  dataLeft={listCategory}
                   changeActive={this.changeActive}
-                  active={this.state.active}
+                  active={active}
                 />
               </div>
               <div className="col-product ">
                 <ProductContainer
-                  data={this.state.listCategory}
+                  data={listCategory}
                   changeActive={this.changeActive}
-                  active={this.state.active}
+                  active={active}
                   getDataItem={this.getDataItem}
                 />
               </div>
               <div className="col-right">
                 <CartContainer
-                  listOrder={this.state.listOrder}
+                  listOrder={listOrder}
                   editDataProduct={this.editDataProduct}
-                  totalAmount={this.state.totalAmount}
-                  totalPrice={this.state.totalPrice}
+                  totalAmount={totalAmount}
+                  totalPrice={totalPrice}
                 />
               </div>
             </div>
           </div>
         )}
-        {this.state.layoutOrder && (
+        {layoutOrder && (
           <Order
-            src={this.state.dataItem.image}
-            product_name={this.state.dataItem.product_name}
+            src={dataItem.image}
+            product_name={dataItem.product_name}
             onClick={() => this.setState({ layoutOrder: false, indexEdit: -1 })}
-            dataItem={this.state.dataItem}
+            dataItem={dataItem}
             addToCartV2={this.addToCartV2}
             getSize={this.getSize}
             getCheck={this.getCheck}
             plusAmount={this.plusAmount}
             minusAmount={this.minusAmount}
             setTxtNote={this.setTxtNote}
-            txtNote={this.state.txtNote}
-            sizeActive={this.state.sizeActive}
-            price_new={this.state.price_new}
-            toppingActive={this.state.toppingActive}
-            amount={this.state.amount}
+            txtNote={txtNote}
+            sizeActive={sizeActive}
+            price_new={price_new}
+            toppingActive={toppingActive}
+            amount={amount}
           />
         )}
       </div>

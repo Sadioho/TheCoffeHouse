@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import Btn from "../common/Btn";
-import Currency from "../common/Currency";
-import SearchInput from "./SearchInput";
+import React, { Component } from 'react';
+import Btn from '../common/Btn';
+import Currency from '../common/Currency';
+import SearchInput from './SearchInput';
 
 class CartContainer extends Component {
   getDataCart = (item, index) => {
-    // console.log(item.txtNote);
     this.props.editDataProduct(item, index);
   };
 
   render() {
-    let { listOrder } = this.props;
+    let { listOrder, totalPrice, totalAmount } = this.props;
     let shipPrice = 0;
-    if (this.props.totalPrice > 50000) {
+    if (totalPrice > 50000) {
       shipPrice = 0;
     } else {
       shipPrice = 10000;
@@ -46,7 +45,7 @@ class CartContainer extends Component {
                       i.code === item.sizeActive && (
                         <span key={i.code}>
                           {i.val}
-                          {item.toppingActive.length > 0 && "+"}
+                          {item.toppingActive.length > 0 && '+'}
                         </span>
                       )
                   )}
@@ -54,7 +53,7 @@ class CartContainer extends Component {
                   {item.topping_list.map((i, index) =>
                     item.toppingActive.includes(i.code)
                       ? i.product_name +
-                        (index < item.toppingActive.length - 1 ? "+" : "")
+                        (index < item.toppingActive.length - 1 ? '+' : '')
                       : null
                   )}
                 </p>
@@ -66,10 +65,8 @@ class CartContainer extends Component {
 
         <div className="coupon__detail">
           <div className="coupon__detail-currency">
-            <p className="coupon__detail-sum">
-              Cộng ({this.props.totalAmount} món)
-            </p>
-            <Currency price={this.props.totalPrice.toLocaleString()} />
+            <p className="coupon__detail-sum">Cộng ({totalAmount} món)</p>
+            <Currency price={totalPrice.toLocaleString()} />
           </div>
           <div className="coupon__detail-currency">
             <p>Vận chuyển</p>
@@ -89,7 +86,7 @@ class CartContainer extends Component {
           <p>Tổng cộng</p>
           <Currency
             className="size-currency-2"
-            price={(this.props.totalPrice + shipPrice).toLocaleString()}
+            price={(totalPrice + shipPrice).toLocaleString()}
           />
         </div>
       </div>

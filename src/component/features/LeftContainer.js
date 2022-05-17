@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import CategoryList from "./CategoryList";
+import React, { Component } from 'react';
+import CategoryList from './CategoryList';
 
 class LeftContainer extends Component {
   render() {
+    const { dataLeft, changeActive, active } = this.props;
     return (
-      <div className="left-container"> 
+      <div className="left-container">
         <CategoryList
-          dataCategoryList={this.props.dataLeft}
-          changeActive={this.props.changeActive}
-          active={this.props.active}
-        /> 
+          dataCategoryList={dataLeft}
+          changeActive={changeActive}
+          active={active}
+        />
       </div>
     );
   }

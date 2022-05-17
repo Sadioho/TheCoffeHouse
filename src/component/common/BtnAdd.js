@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class BtnAdd extends Component {
   render() {
-    return <button className="btnAdd" onClick={this.props.onClick}>
-      <i className={this.props.className}></i>
-    </button>;
+    const { onClick, className } = this.props;
+    return (
+      <button className="btnAdd" onClick={onClick}>
+        <i className={className}></i>
+      </button>
+    );
   }
 }

@@ -1,20 +1,20 @@
-import React from "react";
-import logo from "../../image/logo.png";
-import location from "../../image/location.png";
-import Btn from "../common/Btn";
-import SearchInput from "../features/SearchInput";
-import Address from "../common/Address";
-import ShipNow from "../features/ShipNow";
+import React from 'react';
+import logo from '../../image/logo.png';
+import location from '../../image/location.png';
+import Btn from '../common/Btn';
+import SearchInput from '../features/SearchInput';
+import Address from '../common/Address';
+import ShipNow from '../features/ShipNow';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       dataAddress: [],
-      searchAddress: "",
+      searchAddress: '',
       openDropDownTime: false,
       openDropDownAddress: false,
-      textBtnShipNow: "Giao Ngay",
+      textBtnShipNow: 'Giao Ngay',
       timeNow: null,
       dateNow: null,
       dataDate: [],
@@ -53,27 +53,27 @@ class Header extends React.Component {
       `https://api.thecoffeehouse.com/api/v5/map/autocomplete?key=${e}&from=TCH-WEB`,
       {
         headers: {
-          accept: "application/json, text/plain, */*",
-          "accept-language": "en-US,en;q=0.9,ja;q=0.8",
-          "cache-control": "no-cache",
-          pragma: "no-cache",
-          "sec-ch-ua":
+          accept: 'application/json, text/plain, */*',
+          'accept-language': 'en-US,en;q=0.9,ja;q=0.8',
+          'cache-control': 'no-cache',
+          pragma: 'no-cache',
+          'sec-ch-ua':
             '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
-          "sec-ch-ua-mobile": "?0",
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "same-site",
-          "tch-app-version": "",
-          "tch-device-id": "",
-          "x-csrf-token": "XJVEF4AnLtZqcFJ87XeJaV1nJxGC5HrAkMy9QCHA",
-          "x-requested-with": "XMLHttpRequest",
+          'sec-ch-ua-mobile': '?0',
+          'sec-fetch-dest': 'empty',
+          'sec-fetch-mode': 'cors',
+          'sec-fetch-site': 'same-site',
+          'tch-app-version': '',
+          'tch-device-id': '',
+          'x-csrf-token': 'XJVEF4AnLtZqcFJ87XeJaV1nJxGC5HrAkMy9QCHA',
+          'x-requested-with': 'XMLHttpRequest',
         },
-        referrer: "https://order.thecoffeehouse.com/",
-        referrerPolicy: "strict-origin-when-cross-origin",
+        referrer: 'https://order.thecoffeehouse.com/',
+        referrerPolicy: 'strict-origin-when-cross-origin',
         body: null,
-        method: "GET",
-        mode: "cors",
-        credentials: "omit",
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'omit',
       }
     )
       .then((res) => res.json())
@@ -117,16 +117,16 @@ class Header extends React.Component {
     for (let i = 0; i < 3; i++) {
       nextDay.setDate(dayNow.getDate() + i);
       arr.push(
-        nextDay.toLocaleDateString("en-GB", {
-          day: "2-digit",
-          month: "2-digit",
+        nextDay.toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
         })
       );
     }
     this.setState({
       dataDate: arr,
     });
-  }; 
+  };
 
   pushDataTime = () => {
     let timeStart = new Date();
@@ -149,7 +149,7 @@ class Header extends React.Component {
     timeEnd.setMinutes(30);
 
     let timeDemo = new Date();
-    timeDemo.setMinutes(timeDemo.getMinutes() - timeDemo.getMinutes()+150);
+    timeDemo.setMinutes(timeDemo.getMinutes() - timeDemo.getMinutes() + 150);
 
     let arrTime = [];
 
@@ -159,9 +159,9 @@ class Header extends React.Component {
       timeStart.setMinutes(timeStart.getMinutes() + 15)
     ) {
       arrTime.push(
-        timeStart.toLocaleTimeString("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
+        timeStart.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
         })
       );
     }
@@ -171,15 +171,12 @@ class Header extends React.Component {
       timeStart.setMinutes(timeStart.getMinutes() + 30)
     ) {
       arrTime.push(
-        timeStart.toLocaleTimeString("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
+        timeStart.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
         })
       );
-
-
     }
-
     this.setState({
       dataTime: arrTime,
     });
@@ -188,7 +185,7 @@ class Header extends React.Component {
   setTextBtnShipNow = (date, time) => {
     if (time === this.state.timeNow && date === this.state.dateNow) {
       this.setState({
-        textBtnShipNow: "GIAO NGAY",
+        textBtnShipNow: 'GIAO NGAY',
       });
     } else {
       this.setState({
@@ -211,9 +208,9 @@ class Header extends React.Component {
       timeStart.setMinutes(timeStart.getMinutes() + 30)
     ) {
       arrTime.push(
-        timeStart.toLocaleTimeString("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
+        timeStart.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
         })
       );
     }
@@ -225,7 +222,7 @@ class Header extends React.Component {
   setOpenDropDownTime = () => {
     this.setState({
       openDropDownTime: false,
-      textBtnShipNow: "GIAO NGAY",
+      textBtnShipNow: 'GIAO NGAY',
     });
   };
 
@@ -238,15 +235,15 @@ class Header extends React.Component {
   componentDidMount() {
     this.setDateTimeDefault();
     this.pushDataDate();
-    document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener('mousedown', this.handleClickOutside);
     let dateTime = new Date();
-    let time = dateTime.toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
+    let time = dateTime.toLocaleTimeString('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
     });
-    let dateNow = dateTime.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "2-digit",
+    let dateNow = dateTime.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
     });
     this.setState({
       timeNow: time,
@@ -255,7 +252,7 @@ class Header extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
   render() {

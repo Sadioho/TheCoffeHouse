@@ -1,19 +1,17 @@
-import React, { Component } from "react";
-import logo from "../../image/location.png";
+import React, { Component } from 'react';
+import logo from '../../image/location.png';
 
 export default class Address extends Component {
   render() {
+    const { addressDesciption, title, description } = this.props;
     return (
-      <div
-        className="header__address-content"
-        onClick={this.props.addressDesciption}
-      >
+      <div className="header__address-content" onClick={addressDesciption}>
         <div className="header__address-icon">
           <img src={logo} alt="LOGO" />
         </div>
         <div className="header__address-text">
-          <p>{this.props.title}</p>
-          <p>{this.props.description}</p>
+          <p>{title}</p>
+          <p>{description}</p>
         </div>
       </div>
     );

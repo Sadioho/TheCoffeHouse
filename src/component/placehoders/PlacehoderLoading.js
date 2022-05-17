@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Btn from "../common/Btn";
-import Currency from "../common/Currency";
-import Header from "../layout/Header";
-import SearchInput from "../features/SearchInput";
-import RectShape from "./RectShape";
-import Row from "./Row";
+import React, { Component } from 'react';
+import Btn from '../common/Btn';
+import Currency from '../common/Currency';
+import Header from '../layout/Header';
+import SearchInput from '../features/SearchInput';
+import RectShape from './RectShape';
+import Row from './Row';
 
 export default class PlacehoderLoading extends Component {
   render() {
@@ -15,15 +15,9 @@ export default class PlacehoderLoading extends Component {
           <div className="container">
             <div className="row">
               <div className="col-left">
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
-                <Row className="width-small"></Row>
+                {[1, 2, 3, 4, 5, 6, 7, 9].map((item, ind) => (
+                  <Row key={ind} className="width-small"></Row>
+                ))}
               </div>
               <div className="col-product ">
                 <SearchInput
@@ -93,14 +87,11 @@ export default class PlacehoderLoading extends Component {
                   <div className="coupon__detail">
                     <div className="coupon__detail-currency">
                       <p className="coupon__detail-sum">Cộng (0 món)</p>
-
-                 
                     </div>
 
                     <div className="coupon__detail-currency">
                       <p>Vận chuyển</p>
                       <Currency className="size-currency-1" />
-                      
                     </div>
                     <form className="coupon__detail-sale">
                       <SearchInput
@@ -115,7 +106,6 @@ export default class PlacehoderLoading extends Component {
                   <div className="coupon__detail-currency">
                     <p>Tổng cộng</p>
                     <Currency className="size-currency-2" price="0" />
-                 
                   </div>
                 </div>
               </div>

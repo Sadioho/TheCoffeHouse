@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Image extends Component {
   render() {
+    const { alt, src, className } = this.props;
+
     return (
-      <div className={` ${this.props.className}`} >
-            <img width="80px"  src={this.props.src} alt={this.props.alt}/>
+      <div className={` ${className}`}>
+        <img width="80px" src={src} alt={alt} />
       </div>
     );
   }

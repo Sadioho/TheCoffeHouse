@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Btn from "../common/Btn";
+import React, { Component } from 'react';
+import Btn from '../common/Btn';
 
 export default class ShipNow extends Component {
   constructor(props) {
@@ -19,8 +19,8 @@ export default class ShipNow extends Component {
   };
 
   clickTimer = () => {
-    let elementDate = document.getElementById("date");
-    let elementTime = document.getElementById("time");
+    let elementDate = document.getElementById('date');
+    let elementTime = document.getElementById('time');
     this.props.setTextBtnShipNow(elementDate.value, elementTime.value);
     if (
       elementDate.value === this.props.dateNow &&
@@ -28,19 +28,17 @@ export default class ShipNow extends Component {
     ) {
       this.setState({
         open: false,
-        active:false
+        active: false,
       });
     } else {
       this.setState({
         active: true,
       });
     }
-
-
   };
 
   getSelect = () => {
-    let elementSelectDate = document.getElementById("date");
+    let elementSelectDate = document.getElementById('date');
     this.setState({
       dateSelect: elementSelectDate.value,
     });

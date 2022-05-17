@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import SearchInput from "./SearchInput";
-import Image from "../common/Image";
-import BtnAdd from "../common/BtnAdd";
-import Btn from "../common/Btn";
+import React, { Component } from 'react';
+import SearchInput from './SearchInput';
+import Image from '../common/Image';
+import BtnAdd from '../common/BtnAdd';
+import Btn from '../common/Btn';
 
 export default class Order extends Component {
   componentDidMount() {
     if (this.props.sizeActive === null) {
-      let a = document.querySelector("input[checked]").getAttribute("id");
+      let a = document.querySelector('input[checked]').getAttribute('id');
       if (a !== null) {
         this.props.getSize(a, this.props.price_new);
       }
@@ -53,7 +53,7 @@ export default class Order extends Component {
                 {dataItem.topping_list.map((item, index) =>
                   toppingActive.includes(item.code)
                     ? item.product_name +
-                      (index < toppingActive.length - 1 ? "+" : "")
+                      (index < toppingActive.length - 1 ? '+' : '')
                     : null
                 )}
               </h5>
@@ -120,7 +120,7 @@ export default class Order extends Component {
                 type="text"
                 className="size-100"
                 placeholder="Ghi chú thêm"
-                value={txtNote || ""}
+                value={txtNote || ''}
                 id="form-order"
                 handleChange={this.onChangeInput}
               />
